@@ -1,0 +1,8 @@
+<h3>Hi ! I am Elías Vargas</h3>
+Actualmente me dedico a
+<p [style.background]="color" *ngIf="titulado">{{carrera}}</p>
+<p *ngIf="!titulado">{{estudio}}</p>
+<h2>Mis Skills</h2>
+<ul>
+  <li *ngFor="let skill of skills">{{skill}}</li>
+</ul>
