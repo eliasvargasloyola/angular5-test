@@ -1,8 +1,27 @@
 <h3>Hi ! I am Elías Vargas</h3>
 Actualmente me dedico a
-<p [style.background]="color" *ngIf="titulado">{{carrera}}</p>
-<p *ngIf="!titulado">{{estudio}}</p>
+<p [style.background]="profile.color" *ngIf="profile.titulado">{{profile.carrera}}</p>
+<p *ngIf="!profile.titulado">{{profile.estudio}}</p>
 <h2>Mis Skills</h2>
 <ul>
-  <li *ngFor="let skill of skills">{{skill}}</li>
+  <li *ngFor="let skill of profile.skills">{{skill}}</li>
 </ul>
+
+<h2>Otros Datos</h2>
+
+<p>Mi sueldo es de {{profile.sueldo}} {{profile.currency}}</p>
+
+<input type="text" [(ngModel)]="amount"/>
+
+<button (click)="profile.subirSueldo(amount)">Subir Sueldo</button>
+
+<hr/>
+
+<h3>Estado Civil</h3>
+
+<div [ngSwitch]="profile.civil" [ngStyle]="{'background':profile.color}">
+  <p *ngSwitchCase="1">Soltero</p>
+  <p *ngSwitchCase="2">Casado</p>
+  <p *ngSwitchCase="3">Separado</p>
+</div>
+

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Person} from "../domain/person";
 
 @Component({
   selector: 'app-profile',
@@ -7,21 +8,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  carrera: string;
-  estudio: string;
-  titulado: boolean;
-  color: string;
-  skills: Array<string>;
+  profile:Person;
+  amount:number;
 
   constructor() {
-    this.carrera = 'Ingenierio en Informatica';
-    this.estudio = 'Soy Estudiante de Ingenieria en Informatica';
-    this.titulado = true;
-    this.color = 'red';
-    this.skills = ['Java', 'SpringBoot', 'NodeJS', 'Angular5']
   }
 
   ngOnInit() {
+    this.profile = new Person('Ingenieria en Informatica', 'Estudiante de Ingenieria en Informatica', true, 'red', ['Java', 'SpringBoot'], 200, 'USD', 3);
   }
 
 }

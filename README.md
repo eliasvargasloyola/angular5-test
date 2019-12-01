@@ -1,27 +1,86 @@
-# Angular5Test
+# Angular 5
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+## WARNING 
+First you must be installed NodeJS server [Get NodeJS](https://nodejs.org/en/download/)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation Angular CLI
 
-## Code scaffolding
+1. Install and use Angular CLI. [Oficial Link](https://cli.angular.io/)
+    
+   ```bash
+   npm uninstall -g angular-cli
+   npm uninstall -g @angular/cli
+   npm cache clean
+   npm install -g @angular/cli@latest
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. After you install Angular CLI, you can use the generator codes.
 
-## Build
+    ```bash
+    ng g pipe filter-name
+    ng g service service-name
+    ng g component component-name
+    ng g class domain-class-name
+    ```
+ You can see all types generate in the follow link [ng generate](https://angular.io/cli/generate#ng-generate)
+ 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## First Steps
 
-## Running unit tests
+Create and use my first app in Angular 5
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+   ng new my-fist-app
+   cd my-first-app
+   ng serve
+```
 
-## Running end-to-end tests
+After your running this code, you can go to this url
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- http://localhost:4200/
 
-## Further help
+### Components in Angular 5
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Un componente es un pedazo de código que representa solo una parte de nuestro programa.
+
+Todo Componente se define un nombre, una vista .html y un estilo de la vista .css que será definido en su decorador
+
+### Decorators
+
+Los decoradores nos permiten definir atributos o cargar datos en nuestro componentes.
+
+Example
+
+```angular2
+   @Component({
+     selector: 'app-root', // Here I defined the name
+     templateUrl: './app.component.html', // Here I defined the UI template
+     styleUrls: ['./app.component.css'] // Here its defined the stylus of the template
+   })
+``` 
+### Create new components
+
+Its recommend create one folder by each component your create.
+
+You can create your componente with Angular CLI executing the following code in your prompt.
+
+I recommend using this, because Angular CLI created the basics files and added the component import in own files as necesary.
+
+```bash
+ng generate component component-name
+```
+
+Before you create the new component you must use this in any template, calling your new component.
+
+```html
+<component-name></component-name>
+```
+
+## Directives
+
+You can find all directives avalibles in Angular [here](https://angular.io/api/common#directives)
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
