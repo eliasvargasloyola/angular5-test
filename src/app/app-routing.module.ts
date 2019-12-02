@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ProfileComponent} from "./profile/profile.component";
 import {HomeComponent} from "./home/home/home.component";
 import {FormProfileComponent} from "./form-profile/form-profile.component";
+import {TemplatesComponent} from './templates/templates.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'myprofile', component: ProfileComponent},
   {path: 'person/:personId', component: ProfileComponent},
   {path: 'person', component: FormProfileComponent},
+  {path: 'template', component: TemplatesComponent},
   {path: '**', component: HomeComponent}
 ];
 

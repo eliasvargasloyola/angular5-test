@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home/home.component';
 import { PhonePipe } from './pipes/phone.pipe';
 import { FormProfileComponent } from './form-profile/form-profile.component';
+import { TemplatesComponent } from './templates/templates.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormProfileComponent } from './form-profile/form-profile.component';
     ProfileComponent,
     HomeComponent,
     PhonePipe,
-    FormProfileComponent
+    FormProfileComponent,
+    TemplatesComponent
   ],
   imports: [
     BrowserModule,
