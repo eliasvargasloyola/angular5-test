@@ -1,0 +1,47 @@
+<h1>Crear nuevo Perfil</h1>
+
+<form #formProfile="ngForm" (ngSubmit)="saveProfile(formProfile)">
+  <p>
+    <label>Nombre:</label>
+    <input type="text" name="nombre" #name="ngModel" [(ngModel)]="newPerson.name" required/>
+    <span *ngIf="name.touched && !name.valid" [ngClass]="!name.valid ? 'invalidText' : ''">
+      Pon tu pinche nombre kbron
+    </span>
+  </p>
+  <p>
+    <label>Apellido:</label>
+    <input type="text" name="apellido" #lastname="ngModel" [(ngModel)]="newPerson.lastname" required/>
+    <span *ngIf="lastname.touched && !lastname.valid" [ngClass]="!name.valid ? 'invalidText' : ''">
+      Pon tu pinche apellido kbron
+    </span>
+  </p>
+  <p>
+    <label>Sueldo:</label>
+    <input type="text" name="sueldo" #sueldo="ngModel" [(ngModel)]="newPerson.sueldo" required pattern="\d+"/>
+    <span *ngIf="sueldo.touched && !sueldo.valid" [ngClass]="!name.valid ? 'invalidText' : ''">
+      Pn un pinche sueldo valido kbrn !
+    </span>
+  </p>
+  <p>
+    <label>Telefono:</label>
+    <input type="text" name="phone" #phone="ngModel" [(ngModel)]="newPerson.phone" required/>
+    <span *ngIf="phone.touched && !phone.valid" [ngClass]="!name.valid ? 'invalidText' : ''">
+      Pon tu pinche telefono kbron
+    </span>
+  </p>
+
+  <input type="submit" value="Guardar" [disabled]="!formProfile.form.valid">
+
+</form>
+
+<div>
+  <h2>Perfiles</h2>
+
+  <div *ngFor="let profile of _profileService.profilesList">
+    <hr>
+    <p>{{profile.person.name}}</p>
+    <p>{{profile.person.lastname}}</p>
+    <p>{{profile.person.phone}}</p>
+  </div>
+
+</div>
