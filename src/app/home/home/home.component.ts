@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute, Params} from "@angular/router";
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getProfileByID(personId: string) {
-    this._router.navigate(["/person", personId]);
+    this._router.navigate(['/person', personId]);
   }
 
 }

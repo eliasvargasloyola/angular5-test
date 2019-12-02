@@ -45,3 +45,15 @@
   </div>
 
 </div>
+
+
+<div *ngIf="posts">
+  <h2>Posts</h2>
+
+  <div *ngFor="let p of posts">
+    <hr>
+    <p>{{p.id}}</p>
+    <p>{{p.title}}</p>
+  </div>
+
+</div>

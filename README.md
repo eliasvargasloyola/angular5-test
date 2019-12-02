@@ -12,7 +12,10 @@ First you must be installed NodeJS server [Get NodeJS](https://nodejs.org/en/dow
    npm uninstall -g angular-cli
    npm uninstall -g @angular/cli
    npm cache clean
-   npm install -g @angular/cli@latest
+   
+   #This install the angular CLI support Angular 5
+   #For use the latest replace 1.6.1 for latest
+   npm install -g @angular/cli@1.6.1
    ```
 
 2. After you install Angular CLI, you can use the generator codes.
