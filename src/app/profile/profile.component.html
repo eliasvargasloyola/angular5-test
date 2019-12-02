@@ -1,27 +1,38 @@
-<h3>Hi ! I am Elías Vargas</h3>
-Actualmente me dedico a
-<p [style.background]="profile.color" *ngIf="profile.titulado">{{profile.carrera}}</p>
-<p *ngIf="!profile.titulado">{{profile.estudio}}</p>
-<h2>Mis Skills</h2>
-<ul>
-  <li *ngFor="let skill of profile.skills">{{skill}}</li>
-</ul>
+<div *ngIf="personId">
+  <h4>Hi ! Person {{personId}}</h4>
 
-<h2>Otros Datos</h2>
+  <h3>Hi ! I am Elías Vargas</h3>
+  Actualmente me dedico a
+  <p [style.background]="profile.color" *ngIf="profile.titulado">{{profile.carrera}}</p>
+  <p *ngIf="!profile.titulado">{{profile.estudio}}</p>
+  <h2>Mis Skills</h2>
+  <ul>
+    <li *ngFor="let skill of profile.skills">{{skill}}</li>
+  </ul>
 
-<p>Mi sueldo es de {{profile.sueldo}} {{profile.currency}}</p>
+  <h2>Otros Datos</h2>
 
-<input type="text" [(ngModel)]="amount"/>
+  <p>Mi sueldo es de {{profile.sueldo}} {{profile.currency}}</p>
 
-<button (click)="profile.subirSueldo(amount)">Subir Sueldo</button>
+  <input type="text" [(ngModel)]="amount"/>
 
-<hr/>
+  <button (click)="profile.subirSueldo(amount)">Subir Sueldo</button>
 
-<h3>Estado Civil</h3>
+  <hr/>
 
-<div [ngSwitch]="profile.civil" [ngStyle]="{'background':profile.color}">
-  <p *ngSwitchCase="1">Soltero</p>
-  <p *ngSwitchCase="2">Casado</p>
-  <p *ngSwitchCase="3">Separado</p>
+  <h3>Estado Civil</h3>
+
+  <div [ngSwitch]="profile.civil" [ngStyle]="{'background':profile.color}">
+    <p *ngSwitchCase="1">Soltero</p>
+    <p *ngSwitchCase="2">Casado</p>
+    <p *ngSwitchCase="3">Separado</p>
+  </div>
+</div>
+
+<div *ngIf="!personId">
+  <h2>Es necesario tener el ID de la persona a consultar</h2>
+  <button (click)="volver()">Volver</button>
+
+  <button (click)="defecto()">Ir al Perfil por defecto</button>
 </div>
 

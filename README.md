@@ -33,7 +33,7 @@ Create and use my first app in Angular 5
 ```bash
    ng new my-fist-app
    cd my-first-app
-   ng serve
+   ng serve --poll=2000
 ```
 
 After your running this code, you can go to this url

@@ -1,1 +1,15 @@
-<app-profile></app-profile>
+<h3>{{title}}</h3>
+<hr/>
+<nav>
+
+  <a [routerLink]="['/home']" [routerLinkActive]="['activado']">
+    Home
+  </a>
+    -
+  <a [routerLink]="['/myprofile']" [routerLinkActive]="['activado']">
+    Profile
+  </a>
+
+</nav>
+
+<router-outlet></router-outlet>
