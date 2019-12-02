@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
   }
 
   defecto() {
-    this._router.navigate(['/person', '41242']);
+    this._router.navigate(['/person', '123']);
   }
 
 }

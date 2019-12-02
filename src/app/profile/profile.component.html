@@ -1,13 +1,13 @@
 <div *ngIf="personId">
   <h4>Hi ! Person {{personId}}</h4>
 
-  <h3>Hi ! I am Elías Vargas</h3>
+  <h3>Hi ! I am {{profile.getFullName()}}</h3>
   Actualmente me dedico a
   <p [style.background]="profile.color" *ngIf="profile.titulado">{{profile.carrera}}</p>
   <p *ngIf="!profile.titulado">{{profile.estudio}}</p>
   <h2>Mis Skills</h2>
   <ul>
-    <li *ngFor="let skill of profile.skills">{{skill}}</li>
+    <li *ngFor="let skill of profile.skills">{{skill | titlecase}}</li>
   </ul>
 
   <h2>Otros Datos</h2>
@@ -27,6 +27,11 @@
     <p *ngSwitchCase="2">Casado</p>
     <p *ngSwitchCase="3">Separado</p>
   </div>
+
+  <p>Telefono : {{profile.phone | phone}}</p>
+
+  <p>Nací el : {{profile.dateBorn | date:'dd/MM/yyyy'}}</p>
+
 </div>
 
 <div *ngIf="!personId">
