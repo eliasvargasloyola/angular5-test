@@ -1,14 +1,16 @@
+import {Skills} from './skills';
+
 export class Person {
 
 
   constructor(
     public name: string,
-    public lastname: string,
+    public lastName: string,
     public carrera: string,
     public estudio: string,
     public titulado: boolean,
     public color: string,
-    public skills: Array<string>,
+    public skills: Array<Skills>,
     public sueldo: number,
     public currency: string,
     public civil: number,
@@ -21,7 +23,7 @@ export class Person {
   }
 
   getFullName() {
-    return this.name + ' ' + this.lastname;
+    return this.name + ' ' + this.lastName;
   }
 
 }

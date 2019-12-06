@@ -16,28 +16,18 @@ export class FormProfileComponent implements OnInit {
   public newPerson: Person;
   public posts;
 
-  constructor(public _profileService: ProfileService,
-              public _httpProfile: HttpProfileService) {
+  constructor(public _profileService: ProfileService) {
 
     this.newPerson = new Person('', '', '', '', false, '', [], 0, '', 0, '', '');
   }
 
   ngOnInit() {
-    this.getPosts();
   }
 
   saveProfile(theForm: NgForm) {
     this._profileService.profilesList.push(new PersonMap('369', Object.assign({}, this.newPerson)));
     console.log('Creado ! ');
     theForm.reset();
-  }
-
-  getPosts() {
-    this._httpProfile.getProfileById().subscribe(success => {
-      this.posts = success;
-    }, error => {
-      console.log(error);
-    });
   }
 
 }

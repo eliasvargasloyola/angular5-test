@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import {Http, Response, Headers} from '@angular/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class HttpProfileService {
 
   public url: string;
 
-  constructor(private _http: Http) {
-    this.url = 'https://jsonplaceholder.typicode.com/posts';
+  constructor(private _http: HttpClient) {
+    this.url = 'http://localhost:4200/profile/';
   }
 
-  getProfileById() {
-    return this._http.get(this.url).map(resp => resp.json());
+  getProfileById(profileId: string) {
+    return this._http.get(this.url.concat(profileId));
   }
 }

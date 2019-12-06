@@ -7,7 +7,7 @@
   <p *ngIf="!profile.titulado">{{profile.estudio}}</p>
   <h2>Mis Skills</h2>
   <ul>
-    <li *ngFor="let skill of profile.skills">{{skill | titlecase}}</li>
+    <li *ngFor="let skill of profile.skills">{{skill.name | titlecase}}</li>
   </ul>
 
   <h2>Otros Datos</h2>

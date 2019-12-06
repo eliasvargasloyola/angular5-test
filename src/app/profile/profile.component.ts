@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Person} from '../domain/person';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProfileService} from '../services/profile.service';
+import {Skills} from '../domain/skills';
 
 @Component({
   selector: 'app-profile',
@@ -19,13 +20,14 @@ export class ProfileComponent implements OnInit {
   constructor(private _route: ActivatedRoute,
               private _router: Router,
               private _serviceProfile: ProfileService) {
+    this.profile = new Person('', '', '', '', false, '', [], 0, '', 0, '', '');
   }
 
   ngOnInit() {
     this._route.params.forEach(params => {
       this.personId = params['personId'];
     });
-    this.profile = this._serviceProfile.getProfileById(this.personId);
+    this.getProfileById();
   }
 
   volver() {
@@ -34,6 +36,14 @@ export class ProfileComponent implements OnInit {
 
   defecto() {
     this._router.navigate(['/person', '123']);
+  }
+
+  getProfileById() {
+    this._serviceProfile.getProfileById(this.personId).subscribe(success => {
+      Object.assign(this.profile, success);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
