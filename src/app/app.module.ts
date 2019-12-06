@@ -12,6 +12,7 @@ import {TemplatesComponent} from './templates/templates.component';
 import {HttpProfileService} from './services/http-profile.service';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import {CustomHttpInterceptorService} from './interceptors/custom-http-interceptor.service';
+import { SkilsComponent } from './skils/skils.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CustomHttpInterceptorService} from './interceptors/custom-http-intercept
     HomeComponent,
     PhonePipe,
     FormProfileComponent,
-    TemplatesComponent
+    TemplatesComponent,
+    SkilsComponent
   ],
   imports: [
     BrowserModule,

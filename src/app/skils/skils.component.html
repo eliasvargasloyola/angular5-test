@@ -1,0 +1,9 @@
+<h2>{{nombre}} {{title}}</h2>
+
+<ul>
+  <li *ngFor="let skill of this.skills">{{skill.name | titlecase}}</li>
+</ul>
+
+<input type="text" [(ngModel)]="newSkill"/>
+
+<button class="btn btn-primary" (click)="addSkill($event)">Agregar Skill</button>

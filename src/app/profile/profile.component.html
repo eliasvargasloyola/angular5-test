@@ -5,10 +5,8 @@
   Actualmente me dedico a
   <p [style.background]="profile.color" *ngIf="profile.titulado">{{profile.carrera}}</p>
   <p *ngIf="!profile.titulado">{{profile.estudio}}</p>
-  <h2>Mis Skills</h2>
-  <ul>
-    <li *ngFor="let skill of profile.skills">{{skill.name | titlecase}}</li>
-  </ul>
+
+  <app-skils [skills]="profile.skills" [name]="profile.getFullName()" (newSkills)="addSkill($event)"></app-skils>
 
   <h2>Otros Datos</h2>
 

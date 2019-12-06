@@ -46,4 +46,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  addSkill(newSkills) {
+    this.profile.skills.push(new Skills(parseInt(this.personId, 10), newSkills.newSkill));
+  }
+
 }
